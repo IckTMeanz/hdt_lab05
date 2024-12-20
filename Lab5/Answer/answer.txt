@@ -1,0 +1,110 @@
+
+
+### Phần 1: So sánh AWT và Swing
+
+#### Câu hỏi:
+- **So sánh các thành phần của Swing và AWT?**
+- **Điểm khác biệt chính giữa JFrame và Frame?**
+
+#### Trả lời:
+- Swing là API GUI được phát triển dựa trên AWT, nhưng cung cấp nhiều tính năng mạnh mẽ hơn và giao diện thân thiện hơn.
+- **Khác biệt về thành phần:**
+  - Swing hỗ trợ các thành phần nhẹ (lightweight components).
+  - AWT sử dụng các thành phần nặng (heavyweight components) phụ thuộc vào nền tảng.
+- **Khác biệt giữa JFrame và Frame:**
+  - JFrame (Swing) là phiên bản mở rộng của Frame (AWT), cung cấp thêm tính năng như Look and Feel, Content Pane và hỗ trợ giao diện hiện đại.
+
+---
+
+### Phần 2: Layout Managers trong Swing
+
+#### Câu hỏi:
+- **Layout Managers trong Swing đóng vai trò gì?**
+
+#### Trả lời:
+- Layout Managers giúp tổ chức các thành phần giao diện trong container theo nhiều cách khác nhau.
+- **Các loại Layout Managers phổ biến:**
+  - **BorderLayout:** Chia container thành 5 vùng (North, South, East, West, Center).
+  - **GridLayout:** Chia container thành các ô lưới với số hàng và cột cố định.
+  - **FlowLayout:** Sắp xếp các thành phần theo dòng, giống như văn bản.
+- Trong bài lab, **GridLayout** được sử dụng để tạo giao diện cho **NumberGrid**.
+
+---
+
+### Phần 3: Giao diện View Store
+
+#### Câu hỏi:
+- **Cách tạo giao diện cho "View Store"?**
+
+#### Trả lời:
+- Giao diện "View Store" được thiết kế như sau:
+  - **NORTH:** Menu bar chứa các tùy chọn như "View Cart" và "Update Store".
+  - **CENTER:** Hiển thị danh sách sản phẩm bằng lưới (GridLayout).
+  - Các nút chức năng như "Play" và "Add to Cart" được thêm vào từng sản phẩm để tạo tính tương tác.
+
+---
+
+### Phần 4: Painter App bằng JavaFX
+
+#### Câu hỏi:
+- **Cách chia bố cụ giao diện trong Painter App?**
+- **Thêm tính năng "Eraser" như thế nào?**
+
+#### Trả lời:
+- **Bố cụ giao diện:**
+  - Sử dụng **BorderPane** để chia bố cụ:
+    - **CENTER:** Khu vực vẽ (Canvas).
+    - **TOP:** Thanh công cụ với các nút điều khiển.
+- **Tính năng "Eraser":**
+  - Triển khai bằng cách sử dụng "mực" màu trắng để xóa nội dung trên Canvas.
+
+---
+
+### Phần 5: View Cart Screen bằng JavaFX
+
+#### Câu hỏi:
+- **Điểm nhấn khi thiết kế "View Cart" bằng JavaFX?**
+
+#### Trả lời:
+- **TableView** được sử dụng để hiển thị danh sách sản phẩm trong giỏ hàng.
+- **ObservableList** giúp cập nhật dữ liệu bảng theo thời gian thực khi người dùng thêm hoặc xóa sản phẩm.
+- **Bố cụ chia thành:**
+  - **TOP:** Thanh menu và tiêu đề.
+  - **CENTER:** Bảng sản phẩm.
+  - **BOTTOM:** Nút "Place Order" và tổng tiền.
+
+---
+
+### Phần 6: Tích hợp JavaFX và Swing
+
+#### Câu hỏi:
+- **Cách tích hợp giao diện JavaFX và Swing?**
+
+#### Trả lời:
+- Sử dụng **JFXPanel** để nhúng giao diện JavaFX vào Swing.
+- Khởi tạo giao diện JavaFX trên luồng JavaFX bằng **Platform.runLater()**.
+- **Ví dụ:** Hiển thị màn hình "View Cart" JavaFX trong ứng dụng Swing.
+
+---
+
+### Phần 7: Exception Handling
+
+#### Câu hỏi:
+- **Cách tạo và quản lý Exception tùy chỉnh?**
+
+#### Trả lời:
+- Lớp **PlayerException** được tạo bằng cách mở rộng **Exception**.
+- Trong các lớp **DigitalVideoDisc**, **Track** và **CompactDisc**, phương thức **play()** ném **PlayerException** nếu độ dài nội dung không hợp lệ (<= 0).
+- Điều này đảm bảo xử lý lỗi mạnh mẽ và ngăn phát nội dung không hợp lệ.
+
+---
+
+### Phần 8: Phương thức equals()
+
+#### Câu hỏi:
+- **Khi nào hai phương tiện được xem là bằng nhau?**
+
+#### Trả lời:
+- Hai phương tiện được xem là bằng nhau nếu chúng có cùng **tiêu đề (title)**.
+- Phương thức **equals()** sử dụng **instanceof** để kiểm tra kiểu dữ liệu và so sánh tiêu đề.
+
